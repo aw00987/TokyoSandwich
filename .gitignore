@@ -1,0 +1,25 @@
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- IDE / tools ----
+.idea/
+*.iml
+.vscode/
+.kotlin/
+
+# ---- Gradle / Android ----
+.gradle/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+local.properties
+*.apk
+*.aab
+*.hprof
+
+# ---- Signing keys / secrets ----
+*.jks
+*.keystore
+keystore.properties
