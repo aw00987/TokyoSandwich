@@ -18,6 +18,7 @@ local.properties
 *.apk
 *.aab
 *.hprof
+/app/release/
 
 # ---- Signing keys / secrets ----
 *.jks

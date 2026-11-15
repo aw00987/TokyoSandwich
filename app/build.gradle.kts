@@ -27,8 +27,8 @@ android {
         applicationId = "com.github.aw00987.tokyosandwich"
         minSdk = 34
         targetSdk = 37
-        versionCode = 1
-        versionName = "0.1.0"
+        versionCode = 2
+        versionName = "0.2.0"
     }
 
     androidResources {
@@ -52,7 +52,6 @@ android {
             signingConfig = signingConfigs.findByName("release")
             optimization {
                 enable = true
-                packageScope = setOf("androidx.**", "kotlin.**", "kotlinx.**")
             }
         }
     }
