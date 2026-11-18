@@ -20,10 +20,10 @@ enum class ProviderKind { Water, Electricity, Gas }
 enum class ItemKind { Cost, Set }
 
 /**
- * The items the app makes itself, whose name follows the app's language until the user renames them: the root, the
- * three utilities and the first cost of every new set. The names are string resources (`cost/ui/ItemTitles.kt`).
+ * The items the app makes itself, whose name follows the app's language until the user renames them: the root and the
+ * three utilities. The names are string resources (`cost/ui/ItemTitles.kt`).
  */
-enum class BuiltInTitle { Root, Other, Electricity, Gas, Water }
+enum class BuiltInTitle { Root, Electricity, Gas, Water }
 
 /**
  * One cost of the user's life, or a set of them. Items form a tree of [ItemKind.Set]s (folders) holding

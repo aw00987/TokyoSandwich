@@ -161,19 +161,19 @@ class CostTreeTest {
     @Test
     fun aBuiltInNameClashesInEveryLanguage() {
         val names = BuiltInNames {
-            if (it == BuiltInTitle.Other) setOf(
-                "Other",
-                "其他杂费"
+            if (it == BuiltInTitle.Electricity) setOf(
+                "Electricity",
+                "东京电力"
             ) else emptySet()
         }
         val other =
-            CostItem(10, 3, "", kind = ItemKind.Cost, createdAt = 0, builtIn = BuiltInTitle.Other)
+            CostItem(10, 3, "", kind = ItemKind.Cost, createdAt = 0, builtIn = BuiltInTitle.Electricity)
         val items = tree + other
         assertEquals(
             10L,
             items.nameClash(
                 3,
-                CostItem(11, 3, "其他杂费", kind = ItemKind.Set, createdAt = 0),
+                CostItem(11, 3, "东京电力", kind = ItemKind.Set, createdAt = 0),
                 names
             )?.id
         )
@@ -181,7 +181,7 @@ class CostTreeTest {
             10L,
             items.nameClash(
                 3,
-                CostItem(11, 3, "other", kind = ItemKind.Cost, createdAt = 0),
+                CostItem(11, 3, "electricity", kind = ItemKind.Cost, createdAt = 0),
                 names
             )?.id
         )

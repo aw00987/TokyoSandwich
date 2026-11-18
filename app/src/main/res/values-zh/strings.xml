@@ -128,10 +128,8 @@
     <string name="chart_show">展开折线图</string>
     <string name="chart_hide">收起折线图</string>
     <string name="cost_root">总花费</string>
-    <string name="cost_other">其他杂费</string>
     <string name="cost_add_cost">添加费用</string>
     <string name="cost_add_set">添加费用集</string>
-    <string name="cost_new_set_hint">新费用集里会自动建一项「其他杂费」费用。</string>
     <string name="cost_add_bill">添加账单</string>
     <string name="cost_delete_item">删除</string>
     <string name="cost_item_title">名称</string>
@@ -189,7 +187,7 @@
     <string name="cost_ok">知道了</string>
     <string name="cost_sub_items">%d 项</string>
     <string name="cost_contents">包含 %d 项</string>
-    <string name="cost_empty">这个费用集还是空的。用右上角的按钮添加费用或费用集。</string>
+    <string name="cost_empty">这个费用集还是空的。</string>
     <string name="cost_bills_hint">还没有账单。点「添加账单」为这项费用记账。</string>
     <string name="cost_provider_hint">这是内置的费用：账单由数据同步自动获得，不能手动添加。还没有同步到账单。</string>
     <string name="cost_drag_hint">长按一项并拖动：放到两项之间可调整顺序，放到费用集上可移进去。</string>

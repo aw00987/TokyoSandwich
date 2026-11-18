@@ -84,7 +84,7 @@ class LedgerStore(
     val items: Flow<List<CostItem>> = tree.map { it?.items.orEmpty() }
 
     /**
-     * Adds a cost or a set (with its first cost, [BuiltInTitle.Other]) at the end of the set [parentId]. Refused when
+     * Adds a cost or an empty set at the end of the set [parentId]. Refused when
      * the parent is gone or is not a set, or the title is blank; [ItemResult.NameTaken] when an item of that level has
      * the name already. [icon] is the picked icon's key, null for the default one.
      */
@@ -109,21 +109,8 @@ class LedgerStore(
                     result = ItemResult.NameTaken(it)
                     return@changeTree null
                 }
-                val other =
-                    CostItem(
-                        id + 1,
-                        id,
-                        "",
-                        kind = ItemKind.Cost,
-                        createdAt = now,
-                        builtIn = BuiltInTitle.Other
-                    )
-                        .takeIf { kind == ItemKind.Set }
                 result = ItemResult.Done(id)
-                tree.copy(
-                    nextId = if (other != null) id + 2 else id + 1,
-                    items = tree.items + listOfNotNull(item, other),
-                ) to Unit
+                tree.copy(nextId = id + 1, items = tree.items + item) to Unit
             }
             result
         }

@@ -15,7 +15,6 @@ import java.util.Locale
 @StringRes
 private fun BuiltInTitle.nameRes(): Int = when (this) {
     BuiltInTitle.Root -> R.string.cost_root
-    BuiltInTitle.Other -> R.string.cost_other
     BuiltInTitle.Electricity -> R.string.provider_tepco
     BuiltInTitle.Gas -> R.string.provider_tokyo_gas
     BuiltInTitle.Water -> R.string.provider_tokyo_water

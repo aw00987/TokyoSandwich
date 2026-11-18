@@ -5,6 +5,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.gestures.scrollBy
 import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -29,6 +30,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.ListItemDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarDuration
@@ -573,7 +575,10 @@ private fun CostLevel(
                     }
                     when {
                         current.kind == ItemKind.Cost -> Unit
-                        state.children.isEmpty() -> Hint(stringResource(R.string.cost_empty))
+                        state.children.isEmpty() -> EmptySet(
+                            onAddCost = { creating = ItemKind.Cost },
+                            onAddSet = { creating = ItemKind.Set },
+                        )
                         state.children.size > 1 || parent != null -> Hint(stringResource(R.string.cost_drag_hint))
                     }
                 }
@@ -785,14 +790,6 @@ private fun NewItemDialog(
                     maxLines = 8,
                     modifier = Modifier.fillMaxWidth(),
                 )
-                if (kind == ItemKind.Set) {
-                    Spacer(Modifier.height(12.dp))
-                    Text(
-                        stringResource(R.string.cost_new_set_hint),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
-                }
             }
         },
         confirmButton = {
@@ -921,6 +918,31 @@ private fun MoveUpBar(parentTitle: String, hovered: Boolean, modifier: Modifier 
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
             )
+        }
+    }
+}
+
+/** An empty set: says so and offers the two ways to fill it, the same as the top bar's buttons. */
+@Composable
+private fun EmptySet(onAddCost: () -> Unit, onAddSet: () -> Unit) {
+    Column(Modifier.padding(horizontal = 16.dp, vertical = 12.dp)) {
+        Text(
+            stringResource(R.string.cost_empty),
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        Spacer(Modifier.height(8.dp))
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            OutlinedButton(onClick = onAddCost) {
+                Icon(painterResource(R.drawable.ic_note_add), null, Modifier.size(18.dp))
+                Spacer(Modifier.width(8.dp))
+                Text(stringResource(R.string.cost_add_cost))
+            }
+            OutlinedButton(onClick = onAddSet) {
+                Icon(painterResource(R.drawable.ic_create_new_folder), null, Modifier.size(18.dp))
+                Spacer(Modifier.width(8.dp))
+                Text(stringResource(R.string.cost_add_set))
+            }
         }
     }
 }

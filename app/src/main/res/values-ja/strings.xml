@@ -128,10 +128,8 @@
     <string name="chart_show">グラフを表示</string>
     <string name="chart_hide">グラフを閉じる</string>
     <string name="cost_root">すべての費用</string>
-    <string name="cost_other">その他</string>
     <string name="cost_add_cost">費用を追加</string>
     <string name="cost_add_set">グループを追加</string>
-    <string name="cost_new_set_hint">新しいグループには「その他」の費用が自動で1つ作られます。</string>
     <string name="cost_add_bill">明細を追加</string>
     <string name="cost_delete_item">削除</string>
     <string name="cost_item_title">名前</string>
@@ -189,7 +187,7 @@
     <string name="cost_ok">OK</string>
     <string name="cost_sub_items">%d 項目</string>
     <string name="cost_contents">%d 項目</string>
-    <string name="cost_empty">このグループは空です。右上のボタンで費用やグループを追加してください。</string>
+    <string name="cost_empty">このグループは空です。</string>
     <string name="cost_bills_hint">明細はまだありません。「明細を追加」をタップしてこの費用を記録しましょう。</string>
     <string name="cost_provider_hint">これは組み込みの費用です。明細はデータの同期で自動的に取得され、手動では追加できません。まだ同期された明細はありません。</string>
     <string name="cost_drag_hint">項目を長押ししてドラッグします。項目の間に置くと順番が変わり、グループの上に置くとその中に移動します。</string>

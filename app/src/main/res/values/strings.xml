@@ -128,10 +128,8 @@
     <string name="chart_show">Show chart</string>
     <string name="chart_hide">Hide chart</string>
     <string name="cost_root">All costs</string>
-    <string name="cost_other">Other</string>
     <string name="cost_add_cost">Add cost</string>
     <string name="cost_add_set">Add group</string>
-    <string name="cost_new_set_hint">A new group starts with one cost, “Other”.</string>
     <string name="cost_add_bill">Add bill</string>
     <string name="cost_delete_item">Delete</string>
     <string name="cost_item_title">Name</string>
@@ -189,7 +187,7 @@
     <string name="cost_ok">Got it</string>
     <string name="cost_sub_items">Items: %d</string>
     <string name="cost_contents">Contains: %d</string>
-    <string name="cost_empty">This group is empty. Use the buttons at the top right to add costs or groups.</string>
+    <string name="cost_empty">This group is empty.</string>
     <string name="cost_bills_hint">No bills yet. Tap “Add bill” to record one for this cost.</string>
     <string name="cost_provider_hint">This is a built-in cost: its bills come from the data sync and cannot be added by hand. No bills have been synced yet.</string>
     <string name="cost_drag_hint">Long-press an item and drag it: drop it between items to change the order, or onto a group to move it there.</string>
